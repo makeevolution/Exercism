@@ -1,5 +1,6 @@
 ﻿using System;
-
+// Note: Alternative exists in your github, that uses auto-property
+// instead of traditional getter setter like shown here
 public enum Direction
 {
     North,
@@ -26,26 +27,20 @@ public class RobotSimulator
 
     public Direction Direction
     {
-        get
-        {
-            return this.direction;
-        }
+        get => this.direction;
+        
     }
 
     public int X
     {
-        get
-        {
-            return this.x;
-        }
+        get => this.x;
+        
     }
 
     public int Y
     {
-        get
-        {
-            return this.y;
-        }
+        get => this.y;
+        
     }
 
     public void Move(string instructions)
@@ -54,25 +49,12 @@ public class RobotSimulator
         {
             if (item == 'R')
             {
-                // typeof is used to get the enum elements into strings
-                if ((int)this.direction == 3){
-                    this.direction = (Direction)0;
-                }
-                else
-                {
-                    this.direction =(Direction)((int)this.direction + 1);
-                }
+                this.direction = (Direction)(((int)this.direction+1)%4);
             }
             else if (item == 'L')
             {
-                // typeof is used to get the enum elements into strings
-                if ((int)this.direction == 0){
-                    this.direction = (Direction)3;
-                }
-                else
-                {
-                    this.direction = (Direction)((int)this.direction - 1);
-                }
+                this.direction = (Direction)(((int)this.direction + 4 -1)%4);
+
             }
             else if (item == 'A')
             {

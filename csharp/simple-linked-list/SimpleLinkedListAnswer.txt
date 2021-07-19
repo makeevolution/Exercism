@@ -1,0 +1,66 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
+public class SimpleLinkedList<T> : IEnumerable<T>
+{
+    private T value;
+    private SimpleLinkedList<T> next;
+
+    public SimpleLinkedList(T value)
+    {
+        this.value = value;
+    }
+
+    public SimpleLinkedList(IEnumerable<T> values)
+    {
+        this.value = values.First();
+
+        var lastItem = this;
+        //
+        foreach (var item in values.Skip(1))
+            // Recursively go to the last node (see the Add method),
+            // then adds the item to the next node
+            lastItem = lastItem.Add(item);
+    }
+
+    public T Value => value;
+
+    public SimpleLinkedList<T> Next => next;
+
+    public SimpleLinkedList<T> Add(T value)
+    {
+        
+        var lastItem = this;
+
+        while (lastItem.next != null)
+        // Iterate until we get to the last node
+        {
+            lastItem = lastItem.next;
+        }
+
+        // Now that we got to the current last item, create the new last item
+        lastItem.next = new SimpleLinkedList<T>(value);
+
+        // Return the current linked list (which then has been updated)
+        return this;
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        yield return value;
+
+        SimpleLinkedList<T> temp = Next;
+        while (temp != null)
+        {
+            yield return temp.Value;
+            temp = temp.Next;
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return this.GetEnumerator();
+    }
+}
