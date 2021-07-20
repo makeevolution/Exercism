@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\ASEBASTI\\Exercism\\csharp\\linked-list\\LinkedList.csproj": {}
+    "C:\\Users\\ASEBASTI\\Exercism\\csharp\\linked-list\\LinkedList.csproj": {}
   },
   "projects": {
-    "c:\\Users\\ASEBASTI\\Exercism\\csharp\\linked-list\\LinkedList.csproj": {
+    "C:\\Users\\ASEBASTI\\Exercism\\csharp\\linked-list\\LinkedList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\ASEBASTI\\Exercism\\csharp\\linked-list\\LinkedList.csproj",
+        "projectUniqueName": "C:\\Users\\ASEBASTI\\Exercism\\csharp\\linked-list\\LinkedList.csproj",
         "projectName": "LinkedList",
-        "projectPath": "c:\\Users\\ASEBASTI\\Exercism\\csharp\\linked-list\\LinkedList.csproj",
+        "projectPath": "C:\\Users\\ASEBASTI\\Exercism\\csharp\\linked-list\\LinkedList.csproj",
         "packagesPath": "C:\\Users\\ASEBASTI\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\ASEBASTI\\Exercism\\csharp\\linked-list\\obj\\",
+        "outputPath": "C:\\Users\\ASEBASTI\\Exercism\\csharp\\linked-list\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASEBASTI\\AppData\\Roaming\\NuGet\\NuGet.Config"
